@@ -1,5 +1,6 @@
 from appium.webdriver.common.mobileby import MobileBy
 
+from WeChatAppiumPO.page.addmember import AddMember
 from WeChatAppiumPO.page.basepage import BasePage
 
 
@@ -8,7 +9,7 @@ class AddressBook(BasePage):
     workbench_elemenet = (MobileBy.XPATH,"//*[@text='工作台']")
     mine_elemenet = (MobileBy.XPATH, "//*[@text='我']")
     search_element = (MobileBy.ID, "com.tencent.wework:id/hk9")
-
+    add_member_text = '添加成员'
     def goto_home(self):
         from WeChatAppiumPO.page.home import Home
         self.find_and_click(self.home_elemenet)
@@ -30,3 +31,7 @@ class AddressBook(BasePage):
         # 搜索
         self.find_and_click(self.search_element)
         return Search(self.driver)
+
+    def add_member(self):
+        self.find_by_scroll_and_click(self.add_member_text)
+        return AddMember(self.driver)

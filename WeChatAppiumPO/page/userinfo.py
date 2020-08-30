@@ -9,3 +9,7 @@ class UserInfo(BasePage):
     def goto_edit(self):
         self.find_and_click(self.edit_ele)
         return EditUserInfo(self.driver)
+
+    def get_toast(self):
+        text = self.get_toasttext()
+        return text
