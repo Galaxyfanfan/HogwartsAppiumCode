@@ -1,7 +1,7 @@
 import pytest
 import yaml
 
-from WeChatAppiumPO.page.app import AppDelegate
+from WeChatAppiumPO.testcase.test_base import TestBase
 
 
 def get_name():
@@ -16,14 +16,7 @@ def get_member():
         print(datas)
     return datas
 
-class TestContact():
-    def setup(self):
-        self.app = AppDelegate()
-        self.main = self.app.start().goto_home()
-
-    def teardown(self):
-        self.app.stop()
-
+class TestContact(TestBase):
 
     @pytest.mark.parametrize("name",get_name())
     def test_delete_contact(self,name):
@@ -45,6 +38,9 @@ class TestContact():
             .edit_phone(phone) \
             .save().get_toast()
          assert mytoast == "添加成功"
+
+    def test_close_alert(self):
+        self.main.goto_mine().goto_commuting().commuting()
 
 
 
