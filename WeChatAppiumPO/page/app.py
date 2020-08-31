@@ -15,8 +15,12 @@ class AppDelegate(BasePage):
             self.driver = webdriver.Remote('http://0.0.0.0:4723/wd/hub', caps)
             self.driver.implicitly_wait(10)
         else:
+            # 启动 caps 里面设置的appPackage appActivity
             self.driver.launch_app()
+            # 启动 任何一个包和activity
+            # self.driver.start_activity()
 
+        #如果想要链式调用本身的方法 需要return self
         return self
 
     def restart(self):
