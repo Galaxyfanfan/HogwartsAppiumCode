@@ -7,3 +7,6 @@
 
 3.WeChatAppiumPO：2020-08-29 appium第二节实战课作业
 作业内容：微信APP-使用PO模式封装 添加联系人和删除联系人
+
+4.MyTestFrameWork：2020-09-01 appium第三节实战课作业
+作业内容：搭建自己的基础测试框架
