@@ -1,0 +1,8 @@
+capabilities:
+  platformName: "android"
+  deviceName: "hogwarts"
+  appPackage: "com.tencent.wework"
+  appActivity: ".launch.WwMainActivity"
+  noReset: "true"
+
+url: "http://0.0.0.0:4723/wd/hub"

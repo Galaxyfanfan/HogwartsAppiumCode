@@ -1,0 +1,6 @@
+goto_search:
+  - id: hk9
+  - click: []
+search:
+  - id: g75
+  - sendkeys: ${keyword}

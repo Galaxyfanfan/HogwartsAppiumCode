@@ -1,17 +1,17 @@
-
 import logging
 
 from appium.webdriver.common.mobileby import MobileBy
 from appium.webdriver.webdriver import WebDriver
+
 
 class BasePage():
     logging.basicConfig(level=logging.NOTSET)  # 设置日志级别
     logging.debug(u"如果设置了日志级别为NOTSET,那么这里可以采取debug、info的级别的内容也可以显示在控制台上了")
     logging.debug(u"级别排序: CRITICAL > ERROR > WARNING > INFO > DEBUG")
 
-    ele_black_list = [(MobileBy.ID,"com.android.packageinstaller:id/permission_allow_button")]
+    ele_black_list = [(MobileBy.ID, "com.android.packageinstaller:id/permission_allow_button")]
 
-    def __init__(self, driver: WebDriver=None):
+    def __init__(self, driver: WebDriver = None):
         self.driver = driver
 
     def base_quit(self):
@@ -20,7 +20,7 @@ class BasePage():
     def find(self, locator):
         logging.info(locator)
 
-        #对异常弹框处理
+        # 对异常弹框处理
         try:
             find_element = self.driver.find_element(*locator)
             return find_element
@@ -29,7 +29,7 @@ class BasePage():
             for black in self.ele_black_list:
                 eles = self.driver.find_elements(*black)
                 if len(eles) > 0:
-                    eles[0].click()#点击第一个弹窗关闭
+                    eles[0].click()  # 点击第一个弹窗关闭
                     break
             return self.driver.find_element(*locator)
 
@@ -41,7 +41,7 @@ class BasePage():
         logging.info("点击")
         self.find(locator).click()
 
-    def find_and_sendKeys(self, locator,value):
+    def find_and_sendKeys(self, locator, value):
         logging.info("输入")
         self.find(locator).send_keys(value)
 
