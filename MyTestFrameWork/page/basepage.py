@@ -81,17 +81,28 @@ class BasePage():
                         for key in step.keys():
                             if key == 'id':
                                 locator = (MobileBy.ID,step[key])
+                                self.find(locator)
+                            if key == 'xpath':
+                                locator = (MobileBy.XPATH,step[key])
+                                print(locator)
+                                self.find(locator)
+                            if key == 'css':
+                                locator = (MobileBy.CSS_SELECTOR,step[key])
                                 print(locator)
                                 self.find(locator)
 
                             elif key == 'click':
                                 self.click()
+
                             elif key == 'sendkeys':
                                 text = str(step[key])
                                 for k,v in kwargs.items():
                                     text = text.replace('${' + k + '}',str(v))
-
                                 self.send_keys(text)
+
+                            elif key == 'scroll':
+                                text = str(step[key])
+                                self.find_by_scroll(text)
                             # todo: 更多关键词
                     else:
                         logging.info('格式错误')
@@ -101,12 +112,13 @@ class BasePage():
                 logging.info('method name error')
 
 
-    def find_by_scroll_and_click(self,text):
+    def find_by_scroll(self,text):
         element = (MobileBy.ANDROID_UIAUTOMATOR,'new UiScrollable(new UiSelector()'
                    '.scrollable(true).instance(0))'
                    '.scrollIntoView(new UiSelector()'
                    f'.text("{text}").instance(0));')
-        self.find(element).click()
+        self.find(element)
+        return self
 
     def get_toast(self):
         element = (MobileBy.XPATH,"//*[@class='android.widget.Toast']")

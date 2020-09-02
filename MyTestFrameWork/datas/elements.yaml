@@ -4,3 +4,9 @@ goto_search:
 search:
   - id: g75
   - sendkeys: ${keyword}
+goto_addresswork:
+  - xpath: "//*[@text='通讯录']"
+  - click: []
+addmember:
+  - scroll : '添加成员'
+  - click : []

@@ -19,3 +19,6 @@ class TestSearch(TestBase):
     @pytest.mark.parametrize('name',get_name())
     def test_search(self,name):
         self.app.goto_home().goto_search().search(name)
+
+    def test_addMember(self):
+        self.app.goto_home().goto_addressbook().add_member()
