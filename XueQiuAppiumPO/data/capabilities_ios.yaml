@@ -1,0 +1,12 @@
+capabilities:
+  platformName: "ios"
+  deviceName: "iphone11"
+  noReset: "true"
+  xcodeSigningId: "iPhone Developer"
+  automationName: "XCUITest"
+  bundleId: "com.maitian.owners.test1"
+  platformVersion: "11.4"
+  xcodeOrgId: "7083514@qq.com"
+  udid: "00008030-000219C114B9802E"
+
+url: "http://0.0.0.0:4723/wd/hub"

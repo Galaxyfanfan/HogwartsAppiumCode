@@ -1,0 +1,14 @@
+login:
+  - xpath: '//XCUIElementTypeButton[@name="个人中心"]'
+  - click: []
+  - xpath: '//XCUIElementTypeApplication[@name="麦靓车车主test1"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeOther[1]/XCUIElementTypeImage[2]'
+  - click: []
+  - xpath: '//XCUIElementTypeApplication[@name="麦靓车车主test1"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeTextField'
+  - send_keys: ${username}
+  - xpath: 'value=="请输入验证码"'
+  - send_keys: ${password}
+  - xpath: '//XCUIElementTypeButton[@name="登录"]'
+  - click: []
+
+
+

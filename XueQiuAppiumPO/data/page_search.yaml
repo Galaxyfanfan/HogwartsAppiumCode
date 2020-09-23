@@ -1,0 +1,7 @@
+search:
+  - id: home_search
+  - click: []
+  - id: search_input_text
+  - send_keys: ${keyword}
+  - id: name
+  - click: []
