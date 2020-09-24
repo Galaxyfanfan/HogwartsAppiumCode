@@ -11,5 +11,5 @@
 4.MyTestFrameWork：2020-09-01 appium第三节实战课作业
 作业内容：搭建自己的基础测试框架
 
-4.WeChatDepJson：2020-09-24 json第一节实战课作业
+5.WeChatDepJson：2020-09-24 json第一节实战课作业
 作业内容：企业微信 json接口 增删改查
