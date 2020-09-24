@@ -1,0 +1,29 @@
+access_token:
+  request: 'get'
+  url: 'gettoken'
+  params:
+    corpid: 'ww7dd705f025589a63'
+    corpsecret: 'BOcfzrHqCcimAPkXwKZ8xPm6TlSNQHBvsFn1_UIu9Yc'
+list :
+  request: 'get'
+  url: 'department/list'
+  params:
+    access_token: ''
+add:
+  request : 'post'
+  url : 'department/create'
+  params:
+    name : '144部门'
+    parentid : '2'
+delete:
+  request: 'get'
+  url: 'department/delete'
+  params:
+    access_token: ''
+    id: '5'
+update:
+  request: 'post'
+  url: 'department/update'
+  params:
+    id: '16'
+    name : '接收'
